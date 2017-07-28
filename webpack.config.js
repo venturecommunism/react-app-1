@@ -25,6 +25,8 @@ const babelConfig = Object.assign({}, pkg.babel, {
 // Webpack configuration (main.js => public/dist/main.{hash}.js)
 // http://webpack.github.io/docs/configuration.html
 const config = {
+  // Makes missing fs module error go away for stellar-sdk
+  node: {fs: "empty"},
 
   // The base directory for resolving the entry option
   context: process.cwd(),
